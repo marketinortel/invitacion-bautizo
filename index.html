@@ -56,12 +56,17 @@ body{
     font-family:'Great Vibes',cursive;
     font-size:38px;
 
-    animation:blink 2s infinite;
-    transition:.5s;
+    opacity:1;
+    transform:translateY(0);
+
+    transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
 }
 
 .open .start{
     opacity:0;
+    transform:translateY(-40px);
 }
 
 @keyframes blink{
@@ -146,7 +151,7 @@ body{
 
   transform-origin:top;
 
-  transition:1.2s cubic-bezier(.19,1,.22,1);
+  transition:2s cubic-bezier(.19,1,.22,1);
 
   z-index:5;
 }
@@ -196,7 +201,7 @@ body{
     z-index:2;
 
     transition:
-        transform 1.8s cubic-bezier(.19,1,.22,1),
+        transform 3s cubic-bezier(.19,1,.22,1),
         box-shadow .6s,
         opacity .8s;
 }
@@ -335,7 +340,7 @@ body{
 }
 
 .open .effect{
-  animation:burst 3.5s ease-out forwards;
+  animation:burst 3s ease-out forwards;
 }
 
 @keyframes burst{
@@ -411,6 +416,10 @@ body::before{
 
     z-index:-1;
 }
+.instruction{
+    font-size:28px;
+    margin-top:20px;
+}
 </style>
 </head>
 
@@ -418,7 +427,7 @@ body::before{
 
 <div class="container" id="box">
 
-<div class="start">
+<div class="start" id="startText">
     Están cordialmente invitados al bautizo de nuestro hijo
     <br><br>
     <span style="font-size:28px;">
